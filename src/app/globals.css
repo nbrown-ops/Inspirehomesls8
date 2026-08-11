@@ -25,3 +25,44 @@ body {
     text-wrap: balance;
   }
 }
+
+/* ── Print / PDF styles ─────────────────────────────────────── */
+@media print {
+  /* Hide chrome — sidebar, header, FAB, modals, buttons */
+  aside,
+  header,
+  .print\:hidden,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  body {
+    background: white !important;
+    font-size: 11pt;
+    color: #000;
+  }
+
+  /* Force page breaks before major sections */
+  .print\:break-before {
+    page-break-before: always;
+  }
+
+  /* Ensure tables don't split awkwardly */
+  tr {
+    page-break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Remove Tailwind shadows and rounded corners for printing */
+  * {
+    box-shadow: none !important;
+  }
+}

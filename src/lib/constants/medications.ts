@@ -1,0 +1,33 @@
+export const MEDICATION_ROUTES = [
+  'Oral',
+  'Sublingual',
+  'Topical',
+  'Transdermal Patch',
+  'Inhaled',
+  'Intranasal',
+  'Intramuscular',
+  'Subcutaneous',
+  'Intravenous',
+  'Rectal',
+  'Ocular',
+  'Otic',
+  'Other',
+] as const
+
+export const MEDICATION_FREQUENCIES = [
+  'Once daily (OD)',
+  'Twice daily (BD)',
+  'Three times daily (TDS)',
+  'Four times daily (QDS)',
+  'Every 4 hours',
+  'Every 6 hours',
+  'Every 8 hours',
+  'Every 12 hours',
+  'At night (Nocte)',
+  'In the morning (Mane)',
+  'As required (PRN)',
+  'Weekly',
+  'Fortnightly',
+  'Monthly',
+  'Other',
+] as const
