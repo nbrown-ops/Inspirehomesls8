@@ -52,12 +52,14 @@ jobs:
             echo "NEXT_PUBLIC_SUPABASE_URL=$NEXT_PUBLIC_SUPABASE_URL" > .env.local
             echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=$NEXT_PUBLIC_SUPABASE_ANON_KEY" >> .env.local
             echo "SUPABASE_SERVICE_ROLE_KEY=$SUPABASE_SERVICE_ROLE_KEY" >> .env.local
+            echo "NEXT_PUBLIC_APP_URL=http://localhost:3000" >> .env.local
+            echo "NEXT_PUBLIC_APP_NAME='Inspire Homes'" >> .env.local
 
             # Rebuild and restart the application
             npm install
             npm run build
 
             # Restart process with PM2 (or use 'docker compose up -d --build' for Docker)
-            pm2 restart my-app || pm2 start npm --name "my-app" -- start
+            pm2 restart  inspire-portal || pm2 start npm --name " inspire-portal" -- start
 
             echo "✅ Deployment completed successfully!"
